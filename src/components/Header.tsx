@@ -4,16 +4,18 @@ import { MD3DarkTheme } from "react-native-paper"
 // @ts-ignore
 import iconMain from "@/assets/iconMain.png";
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Sidebar } from "./Sidebar";
 
 export function Header() {
-  return (
-    <View style={styles.container}>
+  return (<>
+  <Sidebar isOpen={false} onClose={() => {}}/>
+  <View style={styles.container}>
       <TouchableHighlight onPress={() => {}} style={{padding: 4, borderRadius: 50}}>
         <Ionicons name="menu" size={32} color={Colors.primary}/>
       </TouchableHighlight>
       <Image source={iconMain} style={{ width: 48, height: 48, marginLeft: "auto" }} />
     </View>
-  )
+  </>)
 }
 
 const styles = StyleSheet.create({
